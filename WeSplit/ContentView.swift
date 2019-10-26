@@ -49,7 +49,7 @@ struct ContentView: View {
           .pickerStyle(SegmentedPickerStyle())
         }
 
-        Section(header: Text("Amount per person")) {
+        Section {
           Picker("Number of people", selection: $numberOfPeople) {
             ForEach(2..<100) {
               Text("\($0) people")
@@ -57,7 +57,7 @@ struct ContentView: View {
           }
         }
 
-        Section {
+        Section(header: Text("Amount per person")) {
           Text("$\(totalPerPerson, specifier: "%.2f")")
         }
 
